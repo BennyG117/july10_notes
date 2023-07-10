@@ -1,16 +1,21 @@
 import React from "react";
 
-const Post = () => {
+// const Post = () => {
+const Post = props => {
+    const {pic} = props;
+   const { author, quote } = props.quote;
+
   return (
     <div className="container">
-        <div className="poster">
-      <p className="quote">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quas
-        a veritatis dolore deserunt quasi quaerat rerum placeat earum inventore
-        molestias vitae iure necessitatibus magni assumenda est, at
-        exercitationem consectetur?
-      </p>
-        </div>
+      <div className="poster">
+            <img alt="lion picture" src={pic}/>
+
+        <p className="quote">{quote}</p>
+        <hr />
+        {/* string interpolation with `` and ${}  alt solutions below */}
+        {/* <p className="author">{` - ${author}`}</p> */}
+        <p className="author"> - {author}</p>
+      </div>
     </div>
   );
 };
